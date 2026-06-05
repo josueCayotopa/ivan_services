@@ -351,7 +351,7 @@ class PacienteController extends Controller
     }
 
     try {
-        $token = env('DECOLECTA_TOKEN');
+        $token = env('DECOLECTA_API_TOKEN');
         
         // Hacemos la petición a Decolecta desde el servidor
         $response = Http::withHeaders([
