@@ -31,6 +31,8 @@ class UpdateUserRequest extends FormRequest
                 'max:50',
                 Rule::unique('users', 'username')->ignore($userId),
             ],
+
+            
             'phone' => 'nullable|string|max:20',
             'avatar_url' => 'nullable|string',
             'language' => 'nullable|string|max:5',

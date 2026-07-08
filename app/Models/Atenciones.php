@@ -33,6 +33,7 @@ class Atenciones extends Model
         'motivo_consulta', // Queja principal breve
         'observaciones',
         'monto_total',
+        'monto_total_dolares',
 
         // Marketing (NUEVO)
         'medio_captacion'  // ✅ Facebook, Instagram, Recomendación...

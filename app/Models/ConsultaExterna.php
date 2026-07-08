@@ -113,6 +113,7 @@ class ConsultaExterna extends Model
         'productos_usar',
         'numero_sesiones',
         'precio_estimado',
+        'precio_estimado_dolares',
         'proxima_cita',
 
         // === INDICACIONES ===

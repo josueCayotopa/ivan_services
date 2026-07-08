@@ -84,6 +84,7 @@ class StoreConsultaExternaRequest extends FormRequest
             'productos_usar' => 'nullable|string',
             'numero_sesiones' => 'nullable|integer',
             'precio_estimado' => 'nullable|numeric',
+            'precio_estimado_dolares' => 'nullable|numeric',
             'proxima_cita' => 'nullable|date',
 
             // === 5. INDICACIONES ===

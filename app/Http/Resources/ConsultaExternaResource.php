@@ -115,6 +115,7 @@ class ConsultaExternaResource extends JsonResource
             'productos_usar' => $this->productos_usar,
             'numero_sesiones' => $this->numero_sesiones,
             'precio_estimado' => $this->precio_estimado,
+            'precio_estimado_dolares' => $this->precio_estimado_dolares,
             'proxima_cita' => $this->proxima_cita,
 
             // ==================== INDICACIONES ====================

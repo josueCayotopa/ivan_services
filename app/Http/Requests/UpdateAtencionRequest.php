@@ -57,7 +57,8 @@ class UpdateAtencionRequest extends FormRequest
             'monto_copago' => ['nullable', 'numeric', 'min:0'],
             'medio_captacion'=>['nullable', 'string'],
             'monto'=>['nullable', 'numeric', 'min:0'],
-
+            'monto_total_dolares' => ['nullable', 'numeric', 'min:0'],
+            
             'status' => ['nullable', 'boolean'],
         ];
     }

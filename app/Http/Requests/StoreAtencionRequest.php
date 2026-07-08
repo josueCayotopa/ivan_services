@@ -41,6 +41,7 @@ class StoreAtencionRequest extends FormRequest
             'medio_captacion' => ['nullable', 'string'],
 
             'monto_total' => ['nullable', 'numeric', 'min:0'],
+            'monto_total_dolares' => ['nullable', 'numeric', 'min:0'],
 
 
             'status' => ['nullable', 'boolean'],
@@ -61,6 +62,7 @@ class StoreAtencionRequest extends FormRequest
             'numero_autorizacion' => 'número de autorización',
             'motivo_consulta' => 'motivo de consulta',
             'monto_total' => 'monto total',
+            'monto_total_dolares' => 'monto total en dólares',
             'monto_cobertura' => 'monto de cobertura',
             'monto_copago' => 'monto de copago',
         ];
