@@ -351,13 +351,13 @@ class PacienteController extends Controller
     }
 
     try {
-        $token = env('DECOLECTA_API_TOKEN');
+        $token = config('services.decolecta.token');
         
         // Hacemos la petición a Decolecta desde el servidor
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
             'Accept' => 'application/json',
-        ])->get("https://api.decolecta.com/v1/reniec/dni", [
+        ])->timeout(15)->get(config('services.decolecta.url') . "/v1/reniec/dni", [
             'numero' => $dni
         ]);
 
@@ -374,9 +374,12 @@ class PacienteController extends Controller
         ], $response->status());
 
     } catch (\Exception $e) {
+        \Log::error('Error consultando DNI en Decolecta: ' . $e->getMessage());
+
         return response()->json([
-            'success' => false, 
-            'message' => 'Error de conexión con el servicio externo'
+            'success' => false,
+            'message' => 'Error de conexión con el servicio externo',
+            'error' => config('app.debug') ? $e->getMessage() : null
         ], 500);
     }
 }
