@@ -52,7 +52,9 @@ class ArchivoAdjuntoController extends Controller
                 'message' => 'Archivo subido correctamente',
                 'data' => new ArchivoAdjuntoResource($archivo)
             ], 201);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
+            \Log::error('Error al subir archivo: ' . $e->getMessage(), ['file' => $e->getFile(), 'line' => $e->getLine()]);
+
             return response()->json([
                 'error' => 'Error al subir archivo: ' . $e->getMessage()
             ], 500);
